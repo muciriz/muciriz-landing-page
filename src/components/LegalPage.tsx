@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, ShieldCheck, FileText, Printer, Phone, Mail, MapPin, CheckCircle2, Share2 } from 'lucide-react';
+import { ArrowLeft, ShieldCheck, FileText, Printer, Phone, Mail, MapPin, CheckCircle2, Share2, UserX } from 'lucide-react';
 import {
   LegalDocType,
   LEGAL_DOCS_META,
@@ -9,6 +9,7 @@ import {
   StaffTermsContent,
   GrievanceSupportBox,
 } from '../data/legalDocuments';
+import { AccountDeletionContent } from './AccountDeletionContent';
 
 interface LegalPageProps {
   activeDoc: LegalDocType;
@@ -41,6 +42,12 @@ export const LegalPage: React.FC<LegalPageProps> = ({
       icon: <FileText size={18} />,
     },
     {
+      id: 'account-deletion',
+      title: 'Account & Data Deletion',
+      subtitle: 'Google Play Safety & Erasure Request',
+      icon: <UserX size={18} />,
+    },
+    {
       id: 'staff-privacy',
       title: 'Staff App Privacy Policy',
       subtitle: 'Delivery Partners & Operational App',
@@ -59,7 +66,16 @@ export const LegalPage: React.FC<LegalPageProps> = ({
   };
 
   const handleCopyLink = () => {
-    const url = window.location.origin + '#' + (activeDoc === 'customer-privacy' ? 'privacy-policy' : activeDoc === 'customer-terms' ? 'terms-and-conditions' : activeDoc);
+    const url =
+      window.location.origin +
+      '#' +
+      (activeDoc === 'customer-privacy'
+        ? 'privacy-policy'
+        : activeDoc === 'customer-terms'
+        ? 'terms-and-conditions'
+        : activeDoc === 'account-deletion'
+        ? 'delete-account'
+        : activeDoc);
     navigator.clipboard.writeText(url);
     alert('Link copied to clipboard: ' + url);
   };
@@ -70,6 +86,8 @@ export const LegalPage: React.FC<LegalPageProps> = ({
         return <CustomerPrivacyContent />;
       case 'customer-terms':
         return <CustomerTermsContent />;
+      case 'account-deletion':
+        return <AccountDeletionContent />;
       case 'staff-privacy':
         return <StaffPrivacyContent />;
       case 'staff-terms':
@@ -600,6 +618,13 @@ export const LegalPage: React.FC<LegalPageProps> = ({
                 style={{ background: 'none', border: 'none', color: '#9AAFA9', cursor: 'pointer', fontSize: '0.8rem' }}
               >
                 Terms of Service
+              </button>
+              <span>•</span>
+              <button
+                onClick={() => onSelectDoc('account-deletion')}
+                style={{ background: 'none', border: 'none', color: '#9AAFA9', cursor: 'pointer', fontSize: '0.8rem' }}
+              >
+                Delete Account
               </button>
               <span>•</span>
               <a href="tel:9447728387" style={{ color: 'var(--gold-light)' }}>

@@ -21,6 +21,8 @@ export function App() {
         ? '#privacy-policy'
         : type === 'customer-terms'
         ? '#terms-and-conditions'
+        : type === 'account-deletion'
+        ? '#delete-account'
         : `#${type}`;
     window.location.hash = hash;
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -32,6 +34,8 @@ export function App() {
       window.location.hash &&
       (window.location.hash.includes('terms') ||
         window.location.hash.includes('privacy') ||
+        window.location.hash.includes('delete') ||
+        window.location.hash.includes('deletion') ||
         window.location.hash.includes('legal'))
     ) {
       history.pushState('', document.title, window.location.pathname + window.location.search);
@@ -44,7 +48,15 @@ export function App() {
       const hash = window.location.hash.toLowerCase();
       const path = window.location.pathname.toLowerCase();
 
-      if (hash.includes('privacy') || path.includes('privacy')) {
+      if (
+        hash.includes('delete') ||
+        hash.includes('deletion') ||
+        path.includes('delete') ||
+        path.includes('deletion')
+      ) {
+        setActiveLegalDoc('account-deletion');
+        setCurrentView('legal');
+      } else if (hash.includes('privacy') || path.includes('privacy')) {
         if (hash.includes('staff')) {
           setActiveLegalDoc('staff-privacy');
         } else {
@@ -86,6 +98,8 @@ export function App() {
               ? '#privacy-policy'
               : type === 'customer-terms'
               ? '#terms-and-conditions'
+              : type === 'account-deletion'
+              ? '#delete-account'
               : `#${type}`;
           window.location.hash = hash;
         }}

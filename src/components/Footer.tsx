@@ -284,6 +284,41 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               </li>
               <li>
                 <button
+                  onClick={() => onOpenLegal('account-deletion')}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#F87171',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    fontSize: '0.86rem',
+                    padding: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    fontWeight: 600,
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FCA5A5')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#F87171')}
+                >
+                  <span>Request Account Deletion</span>
+                  <span
+                    style={{
+                      fontSize: '0.62rem',
+                      backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                      color: '#FCA5A5',
+                      padding: '0.1rem 0.4rem',
+                      borderRadius: '4px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
+                    }}
+                  >
+                    Play Store
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onOpenLegal('customer-privacy')}
                   style={{ background: 'none', border: 'none', color: 'var(--gold-light)', cursor: 'pointer', textAlign: 'left', fontSize: '0.86rem', padding: 0, fontWeight: 600 }}
                 >
@@ -310,14 +345,26 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           <div>
             © 2026 <strong>Muciriz Traders</strong>. All rights reserved.
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
             <span>Pre-orders before 10:00 PM</span>
             <span>•</span>
             <span>100% Formalin-Free</span>
             <span>•</span>
             <span>Cold-Chain Fleet</span>
             <span>•</span>
-            <span>Google Play Store</span>
+            <button
+              onClick={() => onOpenLegal('account-deletion')}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#A5B9B3',
+                cursor: 'pointer',
+                fontSize: '0.78rem',
+                textDecoration: 'underline',
+              }}
+            >
+              Delete Account URL
+            </button>
           </div>
         </div>
       </div>

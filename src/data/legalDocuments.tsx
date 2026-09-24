@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type LegalDocType = 'customer-privacy' | 'customer-terms' | 'staff-privacy' | 'staff-terms';
+export type LegalDocType = 'customer-privacy' | 'customer-terms' | 'staff-privacy' | 'staff-terms' | 'account-deletion';
 
 export interface LegalDocumentMeta {
   id: LegalDocType;
@@ -38,6 +38,13 @@ export const LEGAL_DOCS_META: Record<LegalDocType, LegalDocumentMeta> = {
     subtitle: 'Muciriz Traders - Staff & Contractor Agreement',
     lastUpdated: 'August 2026',
     badge: 'Partner Agreement',
+  },
+  'account-deletion': {
+    id: 'account-deletion',
+    title: 'Account & Associated Data Deletion Policy',
+    subtitle: 'Muciriz (Muciriz Traders) - Play Store Data Safety & Erasure Request',
+    lastUpdated: 'September 2026',
+    badge: 'Google Play Safety Compliance',
   },
 };
 

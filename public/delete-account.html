@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muciriz - Account & Data Deletion Request | Google Play Compliance</title>
+  <meta name="description" content="Official Google Play account deletion instructions and request submission for the Muciriz app, published by Muciriz Traders." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230B2B26'/><text x='50' y='67' font-size='50' font-family='serif' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pine-900: #051A15;
+      --pine-800: #0B2B26;
+      --pine-700: #14463F;
+      --pine-600: #1C5D53;
+      --pine-100: #E2ECE9;
+      --pine-50: #F1F6F5;
+      --sand-50: #FAF8F5;
+      --gold-primary: #B38636;
+      --text-main: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --border-light: #E2E8F0;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FAF8F5;
+      color: var(--text-body);
+      line-height: 1.65;
+      padding: 0;
+    }
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      padding: 1.25rem 1.5rem;
+    }
+    .header-container {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--pine-900);
+      text-decoration: none;
+    }
+    .brand-sub {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--pine-600);
+      text-transform: uppercase;
+    }
+    .hero-banner {
+      background-color: var(--pine-900);
+      color: #FFFFFF;
+      padding: 3rem 1.5rem;
+    }
+    .hero-content {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .badge-pill {
+      display: inline-block;
+      background: rgba(207, 164, 90, 0.2);
+      color: #E2ECE9;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .main-card {
+      max-width: 960px;
+      margin: -1.5rem auto 3rem auto;
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px -2px rgba(11, 43, 38, 0.06);
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background: #F8FAFC;
+      padding: 1.25rem;
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+    }
+    .meta-item .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .meta-item .value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--pine-900);
+      margin-top: 0.15rem;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--pine-900);
+      margin: 2rem 0 0.85rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .form-box {
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--pine-900);
+      margin-bottom: 0.35rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #CBD5E1;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+    .btn-submit {
+      background-color: #DC2626;
+      color: #ffffff;
+      border: none;
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .btn-submit:hover {
+      background-color: #B91C1C;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .card-deleted {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .card-retained {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .grievance-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    footer {
+      background: var(--pine-900);
+      color: #A5B9B3;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+    }
+    @media (max-width: 640px) {
+      .main-card {
+        padding: 1.5rem;
+        margin: -1rem 1rem 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        MUCIRIZ
+        <span class="brand-sub">Shore Harvest & Kitchen</span>
+      </a>
+      <a href="/#delete-account" style="color: var(--pine-700); font-weight: 600; font-size: 0.85rem; text-decoration: none;">
+        Interactive App View &rarr;
+      </a>
+    </div>
+  </header>
+
+  <div class="hero-banner">
+    <div class="hero-content">
+      <span class="badge-pill">Google Play Store Safety Compliance</span>
+      <h1>Account & Associated Data Deletion</h1>
+      <p style="max-width: 680px; color: #D1DDD9; font-size: 0.98rem;">
+        Official deletion request mechanism for <strong>Muciriz</strong>, owned and operated by <strong>Muciriz Traders</strong>.
+        You can request account erasure at any time without reinstalling the mobile application.
+      </p>
+    </div>
+  </div>
+
+  <main class="main-card">
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="label">Store App Name</div>
+        <div class="value">Muciriz</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Developer Name</div>
+        <div class="value">Muciriz Traders</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Processing Window</div>
+        <div class="value">7 to 30 Days</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Helpline Desk</div>
+        <div class="value">+91 94477 28387</div>
+      </div>
+    </div>
+
+    <p>
+      In accordance with Google Play's User Data & Account Deletion Policy, users who created an account using their phone number in the <strong>Muciriz</strong> mobile app or on the Muciriz web platform can request the permanent deletion of their account and associated personal data.
+    </p>
+
+    <!-- Web Request Form -->
+    <h2 class="section-title">Online Account Deletion Request Form</h2>
+    <div class="form-box" id="form-container">
+      <form id="deletion-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="name-input">Full Name (as registered on the app)</label>
+          <input type="text" id="name-input" placeholder="e.g. John Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone-input">Registered Mobile Phone Number *</label>
+          <input type="tel" id="phone-input" placeholder="+91 98765 43210" required />
+          <small style="color: var(--text-muted); font-size: 0.76rem; display: block; margin-top: 0.2rem;">
+            The 10-digit number used during phone login / OTP authentication.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="reason-input">Reason for Deletion (Optional)</label>
+          <select id="reason-input">
+            <option>No longer using the service</option>
+            <option>Relocated outside delivery service area</option>
+            <option>Privacy or data retention concerns</option>
+            <option>Duplicate account created</option>
+            <option>Other reason</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="background: #FFFBEB; border: 1px solid #FDE68A; padding: 0.85rem; border-radius: 8px;">
+          <label style="font-size: 0.82rem; color: #92400E; display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" id="consent-check" required style="width: auto; margin-top: 0.25rem;" />
+            <span>I confirm that I want to permanently delete my Muciriz user account, profile, stored addresses, and cart. I understand completed financial tax invoices will be retained for statutory audit compliance under Indian law.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Account Deletion Request</button>
+      </form>
+
+      <div id="success-box" style="display: none; text-align: center; padding: 1.5rem 0;">
+        <div style="font-size: 2rem; color: #16A34A; margin-bottom: 0.5rem;">✓</div>
+        <h3 style="font-size: 1.25rem; color: var(--pine-900); margin-bottom: 0.5rem;">Deletion Request Submitted</h3>
+        <p style="font-size: 0.9rem; color: var(--text-body); max-width: 520px; margin: 0 auto 1rem auto;">
+          Your request has been received under Reference ID:
+        </p>
+        <div id="ticket-display" style="display: inline-block; background: #0F172A; color: #FFFFFF; padding: 0.5rem 1.25rem; border-radius: 6px; font-family: monospace; font-weight: 700; margin-bottom: 1.25rem;"></div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 550px; margin: 0 auto 1.5rem auto;">
+          Our customer support team will send an SMS/WhatsApp verification message to your number within 24–48 hours to confirm authorization, after which personal profile data will be permanently purged within 7–30 days.
+        </p>
+        <div>
+          <a id="whatsapp-link" href="#" target="_blank" style="display: inline-block; background: #25D366; color: #FFFFFF; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.86rem; margin-right: 0.5rem;">
+            Confirm on WhatsApp (+91 94477 28387)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Steps Section -->
+    <h2 class="section-title">Steps to Request Account Deletion</h2>
+    <p>Users can initiate an account and data deletion request through any of the following channels:</p>
+
+    <div style="margin-top: 1rem;">
+      <h3 style="font-size: 1rem; color: var(--pine-900); margin-bottom: 0.4rem;">Option 1: Web Request (No App Installation Required)</h3>
+      <ol style="padding-left: 1.5rem; font-size: 0.9rem; margin-bottom: 1.25rem;">
+        <li>Submit the online form on this page with your registered mobile phone number.</li>
+        <li>Our customer support team verifies your request via OTP or verification call within 24–48 hours.</li>
+        <li>Upon verification, your profile, addresses, and app session tokens are scheduled for permanent erasure.</li>
+      </ol>
+
+      <h3 style="font-size: 1rem; color: var(--pine-900); margin-bottom: 0.4rem;">Option 2: From Inside the Muciriz Mobile App</h3>
+      <ol style="padding-left: 1.5rem; font-size: 0.9rem; margin-bottom: 1.25rem;">
+        <li>Open the <strong>Muciriz</strong> mobile app on your Android or iOS device.</li>
+        <li>Go to <strong>Account / Profile</strong> tab in the bottom navigation.</li>
+        <li>Select <strong>Account Settings</strong> &gt; <strong>Request Account Deletion</strong>.</li>
+        <li>Confirm using the OTP sent to your registered mobile phone number.</li>
+      </ol>
+
+      <h3 style="font-size: 1rem; color: var(--pine-900); margin-bottom: 0.4rem;">Option 3: Direct Email or Helpline</h3>
+      <ol style="padding-left: 1.5rem; font-size: 0.9rem; margin-bottom: 1.25rem;">
+        <li>Send an email to <a href="mailto:customercare@muciriz.in" style="color: var(--pine-700); font-weight: 600;">customercare@muciriz.in</a> with subject <em>"Account Deletion Request - [Your Phone Number]"</em>.</li>
+        <li>Or contact our customer helpline at <a href="tel:9447728387" style="color: var(--pine-700); font-weight: 600;">+91 94477 28387</a> (Mon–Fri, 10 AM – 5 PM IST).</li>
+      </ol>
+    </div>
+
+    <!-- Data Categories -->
+    <h2 class="section-title">Data Deleted vs. Data Retained</h2>
+    <div class="comparison-grid">
+      <div class="card-deleted">
+        <h3 style="color: #991B1B; font-size: 1rem; margin-bottom: 0.5rem;">Data Permanently Deleted</h3>
+        <ul style="font-size: 0.86rem; color: #450A0A; padding-left: 1.25rem; line-height: 1.6;">
+          <li><strong>Personal Profile:</strong> Full name, phone number, secondary contacts.</li>
+          <li><strong>Saved Delivery Locations:</strong> House/flat address, landmarks, GPS coordinates.</li>
+          <li><strong>Authentication Credentials:</strong> Active session tokens and login credentials.</li>
+          <li><strong>Device Tokens:</strong> Push notification tokens (Firebase Cloud Messaging).</li>
+          <li><strong>Shopping Data:</strong> Active cart items, product notes, and branch preferences.</li>
+        </ul>
+      </div>
+
+      <div class="card-retained">
+        <h3 style="color: #1E293B; font-size: 1rem; margin-bottom: 0.5rem;">Data Retained & Statutory Rationale</h3>
+        <ul style="font-size: 0.86rem; color: #334155; padding-left: 1.25rem; line-height: 1.6;">
+          <li><strong>Invoices & Financial Records:</strong> Order bills, tax amounts, and GST receipts.</li>
+          <li><strong>Statutory Requirement:</strong> Mandated under Section 36 of the Central Goods and Services Tax (CGST) Act, 2017 & Section 44AB of the Income Tax Act, 1961 for commercial tax audit records.</li>
+          <li><strong>Retention Period:</strong> Preserved in an encrypted, access-restricted offline archive for the statutory duration (7–8 financial years), after which they are permanently shredded. All links to your active phone number are severed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Retention Timelines -->
+    <h2 class="section-title">Retention Periods & Erasure Timelines</h2>
+    <ul style="padding-left: 1.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;">
+      <li style="margin-bottom: 0.5rem;"><strong>Request Verification:</strong> 24 to 48 hours to confirm identity and prevent unauthorized deletion.</li>
+      <li style="margin-bottom: 0.5rem;"><strong>Profile & Address Erasure:</strong> Completed within <strong>7 to 30 calendar days</strong> across active production databases.</li>
+      <li style="margin-bottom: 0.5rem;"><strong>Encrypted Backup Snapshots:</strong> Automatically overwritten within 60 days in accordance with routine backup rotation.</li>
+      <li><strong>Tax & Statutory Invoices:</strong> Retained for the statutory 7–8 financial years as mandated by Indian tax laws.</li>
+    </ul>
+
+    <!-- Grievance Officer Box -->
+    <div class="grievance-box">
+      <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--pine-700); text-transform: uppercase; margin-bottom: 0.5rem;">
+        Grievance / Customer Support Officer
+      </h3>
+      <p style="font-weight: 700; color: var(--pine-900);">Mr. Joben Jose</p>
+      <p>Muciriz Traders</p>
+      <p>8/614 - Viswamatha Building, Church Junction</p>
+      <p>Athirampuzha, Kerala - 686562, India</p>
+      <p style="margin-top: 0.5rem;">
+        <strong>Phone:</strong> <a href="tel:9447728387" style="color: var(--pine-700); font-weight: 600;">+91 94477 28387</a>
+      </p>
+      <p>
+        <strong>Email:</strong> <a href="mailto:customercare@muciriz.in" style="color: var(--pine-700); font-weight: 600;">customercare@muciriz.in</a>
+      </p>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
+        Support Hours: Monday – Friday (10:00 AM – 5:00 PM IST)
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 <strong>Muciriz Traders</strong>. All rights reserved. • Viswamatha Building, Athirampuzha, Kerala - 686562</p>
+    <p style="margin-top: 0.35rem; font-size: 0.78rem;">
+      <a href="/#privacy-policy" style="color: #A5B9B3; margin: 0 0.5rem;">Privacy Policy</a> •
+      <a href="/#terms-and-conditions" style="color: #A5B9B3; margin: 0 0.5rem;">Terms & Conditions</a> •
+      <a href="/#delete-account" style="color: #FFFFFF; font-weight: 600; margin: 0 0.5rem;">Delete Account Policy</a>
+    </p>
+  </footer>
+
+  <script>
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      var phone = document.getElementById('phone-input').value;
+      var name = document.getElementById('name-input').value;
+      var randomSuffix = Math.floor(100000 + Math.random() * 900000);
+      var ticket = 'MCR-DEL-' + randomSuffix;
+
+      document.getElementById('ticket-display').innerText = ticket;
+      document.getElementById('deletion-form').style.display = 'none';
+      document.getElementById('success-box').style.display = 'block';
+
+      var cleanPhone = phone.replace(/[^0-9]/g, '');
+      var waMsg = encodeURIComponent('Hello Muciriz Support, I am requesting permanent deletion of my account (Phone: ' + phone + ', Ticket: ' + ticket + '). Please assist with verification.');
+      document.getElementById('whatsapp-link').href = 'https://wa.me/919447728387?text=' + waMsg;
+    }
+  </script>
+</body>
+</html>
