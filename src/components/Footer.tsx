@@ -1,4 +1,5 @@
 import React from 'react';
+import { Phone, MessageCircle, ShieldCheck, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { LegalDocType } from '../data/legalDocuments';
 
 interface FooterProps {
@@ -7,8 +8,103 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
   return (
-    <footer style={{ backgroundColor: 'var(--pine-900)', color: '#9AAFA9', paddingTop: '5rem', paddingBottom: '2.5rem' }}>
+    <footer style={{ backgroundColor: 'var(--pine-900)', color: '#9AAFA9', paddingTop: '4rem', paddingBottom: '2.5rem' }}>
       <div className="container">
+        {/* Top Highlighted Helpline & Support Banner */}
+        <div
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            borderRadius: '16px',
+            padding: '1.5rem 2rem',
+            marginBottom: '3.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1.5rem',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+            <div
+              style={{
+                width: '3rem',
+                height: '3rem',
+                borderRadius: '12px',
+                backgroundColor: 'var(--pine-800)',
+                color: 'var(--gold-light)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              <Phone size={22} />
+            </div>
+            <div>
+              <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', color: 'var(--gold-light)', textTransform: 'uppercase', display: 'block' }}>
+                MUCIRIZ CUSTOMER HELPLINE & DISPATCH CARE
+              </span>
+              <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', marginTop: '0.15rem' }}>
+                <a href="tel:9447728387" style={{ color: '#ffffff', textDecoration: 'none' }}>
+                  +91 94477 28387
+                </a>
+                <span style={{ fontSize: '0.82rem', fontWeight: 400, color: '#9AAFA9', marginLeft: '0.85rem' }}>
+                  (06:00 AM – 08:00 PM Daily)
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap' }}>
+            <a
+              href="https://wa.me/919447728387?text=Hi%20Muciriz%20Team%2C%20I%20have%20an%20inquiry%20regarding%20fresh%20catch"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+                backgroundColor: '#16A34A',
+                color: '#ffffff',
+                fontSize: '0.84rem',
+                fontWeight: 600,
+                padding: '0.6rem 1.15rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#15803D')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#16A34A')}
+            >
+              <MessageCircle size={16} />
+              <span>WhatsApp Helpline</span>
+            </a>
+
+            <a
+              href="tel:9447728387"
+              className="btn-outline"
+              style={{
+                fontSize: '0.84rem',
+                padding: '0.6rem 1.15rem',
+                borderRadius: '8px',
+                backgroundColor: 'transparent',
+                color: '#ffffff',
+                borderColor: 'rgba(255, 255, 255, 0.25)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
+            >
+              <span>Call Helpline</span>
+            </a>
+          </div>
+        </div>
+
         {/* Main Footer Grid */}
         <div
           style={{
@@ -82,9 +178,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               </a>
             </div>
 
-            <div style={{ fontSize: '0.8rem', color: '#889C96', lineHeight: 1.5 }}>
-              <div>Central Helpline: <strong style={{ color: '#ffffff' }}>+91 94477 28387</strong></div>
-              <div>Head Office: Viswamatha Building, Athirampuzha, Kottayam</div>
+            <div style={{ fontSize: '0.8rem', color: '#889C96', lineHeight: 1.6 }}>
+              <div>Head Office: Viswamatha Building, Athirampuzha, Kerala - 686562</div>
+              <div>Direct Email: <a href="mailto:customercare@muciriz.in" style={{ color: 'var(--gold-light)' }}>customercare@muciriz.in</a></div>
             </div>
           </div>
 
@@ -132,7 +228,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
             </ul>
           </div>
 
-          {/* Column 4: Legal & Governance */}
+          {/* Column 4: Policies, Terms & Governance */}
           <div>
             <h4
               style={{
@@ -143,7 +239,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
                 marginBottom: '1.25rem',
               }}
             >
-              Legal & Governance
+              Policies & Governance
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.7rem', fontSize: '0.86rem' }}>
               <li>
@@ -191,7 +287,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
                   onClick={() => onOpenLegal('customer-privacy')}
                   style={{ background: 'none', border: 'none', color: 'var(--gold-light)', cursor: 'pointer', textAlign: 'left', fontSize: '0.86rem', padding: 0, fontWeight: 600 }}
                 >
-                  Grievance Officer / Support
+                  Grievance Officer Redressal
                 </button>
               </li>
             </ul>
@@ -212,14 +308,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           }}
         >
           <div>
-            © 2026 <strong>Muciriz Traders (ShoreCatch)</strong>. All rights reserved.
+            © 2026 <strong>Muciriz Traders</strong>. All rights reserved.
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <span>Pre-orders before 10:00 PM</span>
+            <span>•</span>
             <span>100% Formalin-Free</span>
             <span>•</span>
-            <span>Cold-Chain Direct</span>
+            <span>Cold-Chain Fleet</span>
             <span>•</span>
-            <span>Download on Google Play Store</span>
+            <span>Google Play Store</span>
           </div>
         </div>
       </div>

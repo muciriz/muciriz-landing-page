@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { BrandsShowcase } from './components/BrandsShowcase';
-import { AppDownloadBanner } from './components/AppDownloadBanner';
+import { StandardsSection } from './components/StandardsSection';
 import { ProductCatalog } from './components/ProductCatalog';
-import { HeritageQualitySection } from './components/HeritageQualitySection';
+import { AppDownloadBanner } from './components/AppDownloadBanner';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { LegalModal } from './components/LegalModal';
@@ -34,34 +33,31 @@ export function App() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* 1. Header with Top Green Bar and Brand Navigation */}
+      {/* 1. Header with Pre-Order Bar & Compact App Action */}
       <Navbar onOpenLegal={handleOpenLegal} />
 
-      {/* Main Page Flow Matching Reference Design */}
+      {/* Main Page Flow */}
       <main>
-        {/* 2. Hero Section: Editorial Sea Freshness with Traditional Fish Curry */}
+        {/* 2. Hero Section: Editorial Story, Download on Playstore, & Brands/Traditions Slider */}
         <Hero />
 
-        {/* 3. Dual Flagship Brands: ShoreCatch & Zuriyani Kitchen */}
-        <BrandsShowcase />
+        {/* 3. Who We Are & What We Do: 5 AM Harbour, Fishermen Equity, Ozone Sanitization & Sub-3°C Bar */}
+        <StandardsSection />
 
-        {/* 4. Dark Pine Android Mobile App Feature Banner with Phone Mockup */}
-        <AppDownloadBanner />
-
-        {/* 5. Chilled Daily Provisions: 4-Column Product Catalog */}
+        {/* 4. Brief Showcase of Today's Provisions available on the App */}
         <ProductCatalog onOpenLegal={handleOpenLegal} />
 
-        {/* 6. Ancient Traders' Trust & Quality Promise Section */}
-        <HeritageQualitySection />
+        {/* 5. Mobile App Features Banner with Realistic Android Phone Mockup */}
+        <AppDownloadBanner />
 
-        {/* 7. Headquarters Physical Hub & Kitchen Inquiries */}
+        {/* 6. Direct Helpline, WhatsApp & Hubs (Zero Complicated Query Forms) */}
         <ContactSection onOpenLegal={handleOpenLegal} />
       </main>
 
-      {/* 8. Editorial Heritage Footer */}
+      {/* 7. Heritage Footer with Prominent Helpline Banner & Full Legal Policies */}
       <Footer onOpenLegal={handleOpenLegal} />
 
-      {/* Interactive Comprehensive Legal Documentation Modal */}
+      {/* Interactive Legal Documentation Modal */}
       <LegalModal
         isOpen={legalModalOpen}
         activeDoc={activeLegalDoc}

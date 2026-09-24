@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { Phone, MessageCircle, Smartphone, Clock, MapPin, ShieldCheck, ArrowRight } from 'lucide-react';
 import { LegalDocType } from '../data/legalDocuments';
 
 interface ContactSectionProps {
@@ -7,22 +7,6 @@ interface ContactSectionProps {
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenLegal }) => {
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    region: 'Kochi Hub',
-    interest: 'ShoreCatch Fresh Fish Cuts',
-    notes: '',
-    agreed: true,
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.phone) return;
-    setSubmitted(true);
-  };
-
   const coverageAreas = [
     'Aluva Hub',
     'Kochi Hub',
@@ -45,7 +29,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenLegal }) =
         >
           {/* Left Column: Headquarters & Physical Hub */}
           <div>
-            <span className="editorial-label">HEADQUARTERS & PHYSICAL HUB</span>
+            <span className="editorial-label">HEADQUARTERS & DISTRIBUTION HUBS</span>
             <h2
               style={{
                 fontFamily: 'var(--font-serif)',
@@ -65,38 +49,38 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenLegal }) =
                 marginBottom: '2rem',
               }}
             >
-              Orders are processed through our central distribution facility and local branch hubs 
-              across Kerala, backed by dedicated cold storage and customer care support.
+              Orders are dispatched directly from our central cold facility and local distribution hubs 
+              across Kerala. Cleaned, vacuum-sealed, and delivered under continuous sub-3°C chilling.
             </p>
 
             {/* Official Headquarters Card */}
             <div
               style={{
                 backgroundColor: '#ffffff',
-                borderRadius: '12px',
+                borderRadius: '16px',
                 border: '1px solid var(--border-light)',
-                padding: '1.75rem',
+                padding: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1.25rem',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
+                boxShadow: 'var(--shadow-card)',
                 marginBottom: '2rem',
               }}
             >
               <div>
-                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--pine-600)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--pine-600)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
                   Registered Head Office:
                 </div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--pine-900)', lineHeight: 1.5, fontWeight: 500 }}>
+                <div style={{ fontSize: '0.92rem', color: 'var(--pine-900)', lineHeight: 1.5, fontWeight: 500 }}>
                   Muciriz Traders, 8/614 - Viswamatha Building, Church Junction, Athirampuzha, Kerala - 686562
                 </div>
               </div>
 
               <div>
-                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--pine-600)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--pine-600)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
                   Customer Care Helpline:
                 </div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--pine-900)', lineHeight: 1.5 }}>
+                <div style={{ fontSize: '0.92rem', color: 'var(--pine-900)', lineHeight: 1.5 }}>
                   <a href="tel:9447728387" style={{ fontWeight: 700, color: 'var(--pine-800)', textDecoration: 'none' }}>
                     +91 94477 28387
                   </a>
@@ -108,20 +92,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenLegal }) =
               </div>
 
               <div>
-                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--pine-600)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
-                  Grievance Officer Contact:
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--pine-600)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                  Grievance Officer:
                 </div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--pine-900)', lineHeight: 1.5 }}>
+                <div style={{ fontSize: '0.92rem', color: 'var(--pine-900)', lineHeight: 1.5 }}>
                   Mr. Joben Jose, Grievance Officer, Muciriz Traders
                 </div>
               </div>
 
               <div>
-                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--pine-600)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+                <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--pine-600)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
                   Operating Dispatch Hours:
                 </div>
-                <div style={{ fontSize: '0.9rem', color: 'var(--pine-900)', lineHeight: 1.5 }}>
-                  06:00 AM - 08:00 PM Daily • Delivery Slots: Morning (07:00-11:00) & Evening (04:00-08:00)
+                <div style={{ fontSize: '0.92rem', color: 'var(--pine-900)', lineHeight: 1.5 }}>
+                  06:00 AM - 08:00 PM Daily • Delivery Slots: Morning (07:00 – 11:00 AM) & Evening (04:00 – 08:00 PM)
                 </div>
               </div>
             </div>
@@ -152,7 +136,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenLegal }) =
             </div>
           </div>
 
-          {/* Right Column: Have Kitchen & Cooking Inquiries? Card */}
+          {/* Right Column: Direct Instant Support & 1-Click Ordering (No Complicated Forms) */}
           <div>
             <div
               style={{
@@ -161,233 +145,253 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenLegal }) =
                 border: '1px solid var(--border-light)',
                 padding: '2.5rem 2.25rem',
                 boxShadow: 'var(--shadow-card)',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
+              <span className="editorial-label" style={{ marginBottom: '0.4rem' }}>
+                DIRECT ASSISTANCE • NO FORM COMPLICATIONS
+              </span>
+
               <h3
                 style={{
                   fontFamily: 'var(--font-serif)',
-                  fontSize: '1.6rem',
+                  fontSize: '1.75rem',
                   fontWeight: 700,
                   color: 'var(--pine-900)',
-                  marginBottom: '0.4rem',
+                  marginBottom: '0.65rem',
                 }}
               >
-                Have Kitchen & Cooking Inquiries?
+                Instant Kitchen Help & Orders
               </h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55, marginBottom: '1.75rem' }}>
-                Our culinary support team assists with custom cuts, bulk festival pre-orders, and recipe guidance for our seasonal catch.
+
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '2rem' }}>
+                Need custom cut styles, bulk festival orders, or daily catch updates? Skip form delays—connect with our team instantly:
               </p>
 
-              {submitted ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2rem' }}>
+                {/* 1. Direct Phone Helpline */}
                 <div
                   style={{
-                    padding: '2.5rem 1.5rem',
-                    textAlign: 'center',
-                    backgroundColor: 'var(--sand-50)',
+                    padding: '1.25rem',
                     borderRadius: '12px',
+                    backgroundColor: 'var(--sand-50)',
                     border: '1px solid var(--border-light)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '1rem',
                   }}
                 >
-                  <div
-                    style={{
-                      width: '3.25rem',
-                      height: '3.25rem',
-                      borderRadius: '50%',
-                      backgroundColor: 'var(--pine-800)',
-                      color: '#ffffff',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      margin: '0 auto 1.25rem auto',
-                    }}
-                  >
-                    <CheckCircle2 size={28} />
-                  </div>
-                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--pine-900)', marginBottom: '0.5rem' }}>
-                    Inquiry Received, {formData.name}
-                  </h4>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-                    Our customer care team will connect with you at <strong>{formData.phone}</strong> regarding your requirements.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: '', phone: '', region: 'Kochi Hub', interest: 'ShoreCatch Fresh Fish Cuts', notes: '', agreed: true });
-                    }}
-                    className="btn-outline"
-                    style={{ fontSize: '0.84rem', padding: '0.6rem 1.2rem' }}
-                  >
-                    Send Another Note
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
-                  {/* Row 1: Name & Phone */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: 'var(--pine-900)', marginBottom: '0.35rem' }}>
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="e.g. Kurian Varghese"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        style={{
-                          width: '100%',
-                          padding: '0.68rem 0.9rem',
-                          borderRadius: '6px',
-                          border: '1px solid var(--border-light)',
-                          fontSize: '0.88rem',
-                          outline: 'none',
-                        }}
-                      />
-                    </div>
-
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: 'var(--pine-900)', marginBottom: '0.35rem' }}>
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        placeholder="+91 98470 12345"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        style={{
-                          width: '100%',
-                          padding: '0.68rem 0.9rem',
-                          borderRadius: '6px',
-                          border: '1px solid var(--border-light)',
-                          fontSize: '0.88rem',
-                          outline: 'none',
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Row 2: Region & Interest */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: 'var(--pine-900)', marginBottom: '0.35rem' }}>
-                        Delivery Region *
-                      </label>
-                      <select
-                        value={formData.region}
-                        onChange={(e) => setFormData({ ...formData, region: e.target.value })}
-                        style={{
-                          width: '100%',
-                          padding: '0.68rem 0.9rem',
-                          borderRadius: '6px',
-                          border: '1px solid var(--border-light)',
-                          fontSize: '0.88rem',
-                          outline: 'none',
-                          backgroundColor: '#ffffff',
-                        }}
-                      >
-                        <option value="Kochi Hub">Kochi Hub (Ernakulam, Kakkanad)</option>
-                        <option value="Aluva Hub">Aluva Hub (Town, Kalamassery)</option>
-                        <option value="Kottayam Central">Kottayam Central</option>
-                        <option value="Athirampuzha Hub">Athirampuzha Hub</option>
-                        <option value="Other Region">Other Location in Kerala</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: 'var(--pine-900)', marginBottom: '0.35rem' }}>
-                        Interested In
-                      </label>
-                      <select
-                        value={formData.interest}
-                        onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                        style={{
-                          width: '100%',
-                          padding: '0.68rem 0.9rem',
-                          borderRadius: '6px',
-                          border: '1px solid var(--border-light)',
-                          fontSize: '0.88rem',
-                          outline: 'none',
-                          backgroundColor: '#ffffff',
-                        }}
-                      >
-                        <option value="ShoreCatch Fresh Fish Cuts">ShoreCatch Fresh Fish Cuts</option>
-                        <option value="Zuriyani Heirloom Masalas">Zuriyani Heirloom Masalas</option>
-                        <option value="VegEze Farm Veggie Bunches">VegEze Farm Veggie Bunches</option>
-                        <option value="All Offerings (Whole Meal Box)">All Offerings (Whole Meal Box)</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Row 3: Custom Notes */}
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: 'var(--pine-900)', marginBottom: '0.35rem' }}>
-                      Custom Notes / Cut Style
-                    </label>
-                    <textarea
-                      rows={3}
-                      placeholder="Specify clean fillets, curry cuts, whole with slits, or special delivery timing..."
-                      value={formData.notes}
-                      onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div
                       style={{
-                        width: '100%',
-                        padding: '0.68rem 0.9rem',
-                        borderRadius: '6px',
-                        border: '1px solid var(--border-light)',
-                        fontSize: '0.88rem',
-                        outline: 'none',
-                        resize: 'vertical',
+                        width: '2.75rem',
+                        height: '2.75rem',
+                        borderRadius: '10px',
+                        backgroundColor: 'var(--pine-800)',
+                        color: '#ffffff',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
                       }}
-                    />
+                    >
+                      <Phone size={20} />
+                    </div>
+                    <div>
+                      <strong style={{ fontSize: '0.95rem', color: 'var(--pine-900)', display: 'block' }}>
+                        Customer Care Helpline
+                      </strong>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                        Available 06:00 AM – 08:00 PM Daily
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Row 4: Agreement Checkbox */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    <input
-                      type="checkbox"
-                      id="legal-agree"
-                      checked={formData.agreed}
-                      onChange={(e) => setFormData({ ...formData, agreed: e.target.checked })}
-                      required
-                    />
-                    <label htmlFor="legal-agree" style={{ cursor: 'pointer' }}>
-                      I agree to the{' '}
-                      <button
-                        type="button"
-                        onClick={() => onOpenLegal('customer-privacy')}
-                        style={{ background: 'none', border: 'none', color: 'var(--pine-800)', fontWeight: 600, textDecoration: 'underline', cursor: 'pointer', padding: 0 }}
-                      >
-                        Customer Privacy Policy
-                      </button>
-                      {' '}and{' '}
-                      <button
-                        type="button"
-                        onClick={() => onOpenLegal('customer-terms')}
-                        style={{ background: 'none', border: 'none', color: 'var(--pine-800)', fontWeight: 600, textDecoration: 'underline', cursor: 'pointer', padding: 0 }}
-                      >
-                        Terms of Service
-                      </button>
-                      .
-                    </label>
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
+                  <a
+                    href="tel:9447728387"
                     className="btn-dark"
                     style={{
-                      width: '100%',
-                      padding: '0.85rem',
-                      fontSize: '0.92rem',
+                      fontSize: '0.86rem',
+                      padding: '0.55rem 1.15rem',
                       borderRadius: '8px',
-                      marginTop: '0.5rem',
+                      textDecoration: 'none',
                     }}
                   >
-                    <span>Submit Inquiry</span>
-                    <ArrowRight size={16} />
+                    <span>Call +91 94477 28387</span>
+                  </a>
+                </div>
+
+                {/* 2. Direct WhatsApp Assistance */}
+                <div
+                  style={{
+                    padding: '1.25rem',
+                    borderRadius: '12px',
+                    backgroundColor: '#F0FDF4',
+                    border: '1px solid #BBF7D0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '1rem',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div
+                      style={{
+                        width: '2.75rem',
+                        height: '2.75rem',
+                        borderRadius: '10px',
+                        backgroundColor: '#16A34A',
+                        color: '#ffffff',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <MessageCircle size={20} />
+                    </div>
+                    <div>
+                      <strong style={{ fontSize: '0.95rem', color: '#14532D', display: 'block' }}>
+                        WhatsApp Direct Chat
+                      </strong>
+                      <span style={{ fontSize: '0.8rem', color: '#166534' }}>
+                        Instant daily catch inquiries & custom cuts
+                      </span>
+                    </div>
+                  </div>
+
+                  <a
+                    href="https://wa.me/919447728387?text=Hi%20Muciriz%20Team%2C%20I%20would%20like%20to%20inquire%20about%20today%27s%20fresh%20catch%20and%20pre-order."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.45rem',
+                      backgroundColor: '#16A34A',
+                      color: '#ffffff',
+                      fontSize: '0.86rem',
+                      fontWeight: 600,
+                      padding: '0.55rem 1.15rem',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#15803D')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#16A34A')}
+                  >
+                    <span>Chat on WhatsApp</span>
+                  </a>
+                </div>
+
+                {/* 3. Android Mobile App Ordering */}
+                <div
+                  style={{
+                    padding: '1.25rem',
+                    borderRadius: '12px',
+                    backgroundColor: 'var(--sand-50)',
+                    border: '1px solid var(--border-light)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '1rem',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div
+                      style={{
+                        width: '2.75rem',
+                        height: '2.75rem',
+                        borderRadius: '10px',
+                        backgroundColor: 'var(--pine-900)',
+                        color: 'var(--gold-light)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Smartphone size={20} />
+                    </div>
+                    <div>
+                      <strong style={{ fontSize: '0.95rem', color: 'var(--pine-900)', display: 'block' }}>
+                        Muciriz Android App
+                      </strong>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                        Live cold-chain tracking & morning pre-orders
+                      </span>
+                    </div>
+                  </div>
+
+                  <a
+                    href="#app-download"
+                    className="btn-outline"
+                    style={{
+                      fontSize: '0.86rem',
+                      padding: '0.55rem 1.15rem',
+                      borderRadius: '8px',
+                    }}
+                  >
+                    <span>Download App</span>
+                    <ArrowRight size={14} />
+                  </a>
+                </div>
+              </div>
+
+              {/* Legal & Policy Note */}
+              <div
+                style={{
+                  marginTop: 'auto',
+                  paddingTop: '1.25rem',
+                  borderTop: '1px solid var(--border-subtle)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontSize: '0.78rem',
+                  color: 'var(--text-muted)',
+                }}
+              >
+                <ShieldCheck size={16} color="#10B981" style={{ flexShrink: 0 }} />
+                <span>
+                  All customer deliveries are backed by our 100% freshness guarantee. Review our{' '}
+                  <button
+                    onClick={() => onOpenLegal('customer-privacy')}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--pine-800)',
+                      fontWeight: 600,
+                      textDecoration: 'underline',
+                      cursor: 'pointer',
+                      padding: 0,
+                    }}
+                  >
+                    Privacy Policy
                   </button>
-                </form>
-              )}
+                  {' '}and{' '}
+                  <button
+                    onClick={() => onOpenLegal('customer-terms')}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--pine-800)',
+                      fontWeight: 600,
+                      textDecoration: 'underline',
+                      cursor: 'pointer',
+                      padding: 0,
+                    }}
+                  >
+                    Terms of Service
+                  </button>
+                  .
+                </span>
+              </div>
             </div>
           </div>
         </div>

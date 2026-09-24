@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ShieldCheck, Phone } from 'lucide-react';
+import React, { useState } from 'react';
+import { Menu, X, ShieldCheck, Phone, Smartphone } from 'lucide-react';
 import { LegalDocType } from '../data/legalDocuments';
 
 interface NavbarProps {
@@ -10,23 +10,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLegal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Shore Catch Seafood', href: '#brands' },
-    { name: 'Kitchen Masalas', href: '#brands' },
+    { name: 'Our Brands', href: '#brands' },
+    { name: 'Quality Standard', href: '#standards' },
     { name: "Today's Catch", href: '#products' },
-    { name: 'Freshness Standard', href: '#heritage' },
-    { name: 'Cold-Chain Fleet', href: '#heritage' },
-    { name: 'Our Heritage', href: '#heritage' },
+    { name: 'Mobile App', href: '#app-download' },
+    { name: 'Helpline & Hubs', href: '#contact' },
   ];
 
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 1000, width: '100%' }}>
-      {/* Top Announcement Bar */}
+      {/* Top Announcement Bar - Focused Exclusively on Daily Pre-Order Notice */}
       <div
         style={{
           backgroundColor: 'var(--pine-900)',
           color: '#E2ECE9',
-          fontSize: '0.75rem',
-          padding: '0.45rem 1.5rem',
+          fontSize: '0.78rem',
+          padding: '0.5rem 1.5rem',
           borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
         }}
       >
@@ -35,51 +34,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLegal }) => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '0.5rem',
+            justifyContent: 'center',
+            textAlign: 'center',
+            gap: '0.65rem',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span
-              style={{
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                backgroundColor: '#10B981',
-                display: 'inline-block',
-              }}
-            />
-            <span style={{ letterSpacing: '0.01em', fontWeight: 500 }}>
-              Pre-order before 10:00 PM for morning delivery • Certified 0% Formalin catch
-            </span>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', fontSize: '0.75rem' }}>
-            <a
-              href="tel:9447728387"
-              style={{ color: '#E2ECE9', textDecoration: 'none', fontWeight: 500 }}
-            >
-              Helpline: <strong style={{ color: '#ffffff' }}>+91 94477 28387</strong>
-            </a>
-            <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-            <button
-              onClick={() => onOpenLegal('customer-privacy')}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#CBD5E1',
-                fontSize: '0.75rem',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.3rem',
-              }}
-            >
-              <ShieldCheck size={13} color="#10B981" />
-              <span>Policies & Trust</span>
-            </button>
-          </div>
+          <span
+            style={{
+              width: '7px',
+              height: '7px',
+              borderRadius: '50%',
+              backgroundColor: '#10B981',
+              display: 'inline-block',
+              boxShadow: '0 0 8px #10B981',
+              flexShrink: 0,
+            }}
+          />
+          <span style={{ letterSpacing: '0.02em', fontWeight: 600 }}>
+            Daily Pre-Order: Book before 10:00 PM for morning delivery • Certified 0% Formalin catch • Vacuum Sealed Freshness
+          </span>
         </div>
       </div>
 
@@ -153,35 +126,35 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLegal }) => {
             ))}
           </nav>
 
-          {/* Right Action: Google Play Store Button */}
+          {/* Right Action: Sleek Compact App Button */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <a
               href="#app-download"
-              className="btn-playstore"
-              style={{ padding: '0.42rem 0.95rem' }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+                backgroundColor: 'var(--pine-900)',
+                color: '#ffffff',
+                padding: '0.52rem 1.1rem',
+                borderRadius: '8px',
+                fontSize: '0.84rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                border: '1px solid var(--pine-800)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--pine-800)';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--pine-900)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
             >
-              <svg width="18" height="20" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M3.609 1.814L13.793 12 3.61 22.186A1.85 1.85 0 0 1 3 20.875V3.125c0-.498.225-.97.609-1.311z"
-                  fill="#00D6FF"
-                />
-                <path
-                  d="M17.18 8.613L4.938 1.488A1.83 1.83 0 0 0 3.61 1.814L13.793 12l3.387-3.387z"
-                  fill="#00F076"
-                />
-                <path
-                  d="M3.61 22.186c.384.342.884.444 1.328.186l12.242-7.125L13.793 12 3.61 22.186z"
-                  fill="#FF3A44"
-                />
-                <path
-                  d="M20.59 10.603l-3.41 1.984-3.387-3.387 3.387-3.387 3.41 1.984c.983.57 1.41 1.403 1.41 2.403 0 1-.427 1.833-1.41 2.403z"
-                  fill="#FFAA00"
-                />
-              </svg>
-              <div>
-                <span className="playstore-sub">GET IT ON</span>
-                <span className="playstore-main">Google Play</span>
-              </div>
+              <Smartphone size={15} color="var(--gold-light)" />
+              <span>Get App</span>
             </a>
 
             {/* Mobile Hamburger Button */}
