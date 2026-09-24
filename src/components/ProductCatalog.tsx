@@ -28,7 +28,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenLegal }) =
   ];
 
   return (
-    <section id="products" className="section" style={{ backgroundColor: '#FFFFFF' }}>
+    <section id="products" className="section" style={{ backgroundColor: '#FFFFFF', paddingBottom: '3.5rem' }}>
       <div className="container">
         {/* Section Header */}
         <div
@@ -38,7 +38,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenLegal }) =
             alignItems: 'flex-end',
             justifyContent: 'space-between',
             gap: '1.5rem',
-            marginBottom: '2.5rem',
+            marginBottom: '2rem',
           }}
         >
           <div>
@@ -96,7 +96,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenLegal }) =
         </div>
 
         {/* Filter Pills Row */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem', marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem', marginBottom: '2rem' }}>
           {tabList.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -104,9 +104,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenLegal }) =
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
                 style={{
-                  padding: '0.55rem 1.25rem',
+                  padding: '0.5rem 1.15rem',
                   borderRadius: '999px',
-                  fontSize: '0.84rem',
+                  fontSize: '0.82rem',
                   fontWeight: 600,
                   border: '1px solid',
                   borderColor: isActive ? 'var(--pine-800)' : 'var(--border-light)',
@@ -122,41 +122,53 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenLegal }) =
           })}
         </div>
 
-        {/* 4-Column Product Grid */}
+        {/* Side-by-Side Product Grid (2 columns on desktop instead of listing 1 by 1) */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-            gap: '1.75rem',
-            marginBottom: '3rem',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '1.25rem',
+            marginBottom: '1.75rem',
           }}
+          className="catalog-grid-side-by-side"
         >
           {filteredItems.map((item) => (
             <div
               key={item.id}
               style={{
                 backgroundColor: '#ffffff',
-                borderRadius: '14px',
+                borderRadius: '12px',
                 border: '1px solid var(--border-light)',
                 overflow: 'hidden',
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 transition: 'all 0.25s ease',
-                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.03)',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)',
+                minHeight: '160px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 10px 25px rgba(11, 43, 38, 0.08)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(11, 43, 38, 0.08)';
                 e.currentTarget.style.borderColor = 'rgba(11, 43, 38, 0.3)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.03)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.03)';
                 e.currentTarget.style.borderColor = 'var(--border-light)';
               }}
+              className="product-card-horizontal"
             >
-              {/* Product Thumbnail */}
-              <div style={{ height: '175px', width: '100%', overflow: 'hidden', backgroundColor: '#F8FAFC' }}>
+              {/* Product Thumbnail (Side view) */}
+              <div
+                style={{
+                  width: '145px',
+                  minWidth: '145px',
+                  backgroundColor: '#F8FAFC',
+                  overflow: 'hidden',
+                  position: 'relative',
+                }}
+                className="product-card-thumb"
+              >
                 <img
                   src={item.imageUrl}
                   alt={item.name}
@@ -169,108 +181,123 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenLegal }) =
                 />
               </div>
 
-              {/* Product Info */}
-              <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <div
-                  style={{
-                    fontSize: '0.62rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    color: 'var(--pine-600)',
-                    textTransform: 'uppercase',
-                    marginBottom: '0.35rem',
-                  }}
-                >
-                  {item.categoryTag}
-                </div>
+              {/* Product Info (Right Side) */}
+              <div
+                style={{
+                  padding: '1rem 1.15rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flex: 1,
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontSize: '0.62rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.08em',
+                      color: 'var(--pine-600)',
+                      textTransform: 'uppercase',
+                      marginBottom: '0.2rem',
+                    }}
+                  >
+                    {item.categoryTag}
+                  </div>
 
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '1.18rem',
-                    fontWeight: 700,
-                    color: 'var(--pine-900)',
-                    marginBottom: '0.5rem',
-                    lineHeight: 1.25,
-                  }}
-                >
-                  {item.name}
-                </h3>
-
-                <p
-                  style={{
-                    fontSize: '0.8rem',
-                    color: 'var(--text-muted)',
-                    lineHeight: 1.5,
-                    marginBottom: '1rem',
-                  }}
-                >
-                  {item.description}
-                </p>
-
-                {/* Weight / Size Badges */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '0.5rem 0.65rem',
-                    backgroundColor: 'var(--sand-50)',
-                    borderRadius: '6px',
-                    border: '1px solid var(--border-subtle)',
-                    fontSize: '0.72rem',
-                    color: 'var(--text-body)',
-                    marginBottom: '1.25rem',
-                  }}
-                >
-                  <span style={{ fontWeight: 600 }}>{item.grossWeightBadge}</span>
-                  <span style={{ color: 'var(--pine-700)', fontWeight: 700 }}>{item.netWeightBadge}</span>
-                </div>
-
-                {/* Price & CTA Button */}
-                <div
-                  style={{
-                    marginTop: 'auto',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingTop: '0.85rem',
-                    borderTop: '1px solid var(--border-subtle)',
-                  }}
-                >
-                  <span
+                  <h3
                     style={{
                       fontFamily: 'var(--font-serif)',
                       fontSize: '1.05rem',
                       fontWeight: 700,
                       color: 'var(--pine-900)',
+                      marginBottom: '0.35rem',
+                      lineHeight: 1.25,
                     }}
                   >
-                    {item.priceDisplay}
-                  </span>
+                    {item.name}
+                  </h3>
 
-                  <a
-                    href="#app-download"
-                    className="btn-dark"
+                  <p
                     style={{
-                      padding: '0.45rem 0.85rem',
                       fontSize: '0.78rem',
-                      borderRadius: '6px',
+                      color: 'var(--text-muted)',
+                      lineHeight: 1.45,
+                      marginBottom: '0.65rem',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden',
                     }}
                   >
-                    <span>Order in App</span>
-                    <ArrowRight size={13} />
-                  </a>
+                    {item.description}
+                  </p>
+                </div>
+
+                <div>
+                  {/* Weight / Size Badges */}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '0.35rem 0.55rem',
+                      backgroundColor: 'var(--sand-50)',
+                      borderRadius: '5px',
+                      border: '1px solid var(--border-subtle)',
+                      fontSize: '0.7rem',
+                      color: 'var(--text-body)',
+                      marginBottom: '0.65rem',
+                    }}
+                  >
+                    <span style={{ fontWeight: 600 }}>{item.grossWeightBadge}</span>
+                    <span style={{ color: 'var(--pine-700)', fontWeight: 700 }}>{item.netWeightBadge}</span>
+                  </div>
+
+                  {/* Price & CTA Button */}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      paddingTop: '0.5rem',
+                      borderTop: '1px solid var(--border-subtle)',
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-serif)',
+                        fontSize: '1rem',
+                        fontWeight: 700,
+                        color: 'var(--pine-900)',
+                      }}
+                    >
+                      {item.priceDisplay}
+                    </span>
+
+                    <a
+                      href="tel:9447728387"
+                      className="btn-dark"
+                      style={{
+                        padding: '0.38rem 0.75rem',
+                        fontSize: '0.75rem',
+                        borderRadius: '5px',
+                      }}
+                    >
+                      <span>Pre-Order</span>
+                      <ArrowRight size={12} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Notice on Delivery Bar */}
+        {/* Notice on Delivery Bar with Clean Balanced Spacing */}
         <div
           style={{
-            padding: '1.15rem 1.5rem',
+            padding: '1rem 1.35rem',
             backgroundColor: 'var(--sand-50)',
             borderRadius: '10px',
             border: '1px solid var(--border-light)',
@@ -278,14 +305,14 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenLegal }) =
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '1rem',
-            fontSize: '0.85rem',
+            gap: '0.85rem',
+            fontSize: '0.84rem',
             color: 'var(--text-body)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-            <Info size={18} color="var(--pine-700)" style={{ flexShrink: 0 }} />
-            <span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flex: 1, minWidth: '260px' }}>
+            <Info size={17} color="var(--pine-700)" style={{ flexShrink: 0 }} />
+            <span style={{ lineHeight: 1.5 }}>
               <strong>Notice on Delivery:</strong> Fresh seafood prices change based on daily harbour auction 
               rates. If your order exceeds Rs. 500 within 5km of our local branch, delivery is free. Standard express delivery applies elsewhere.
             </span>
@@ -307,7 +334,27 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenLegal }) =
             Read Full Terms of Delivery →
           </button>
         </div>
+
+        {/* Clean Line Break after Notice on Delivery */}
+        <div style={{ marginTop: '2.5rem', borderBottom: '1px solid var(--border-light)' }} />
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .catalog-grid-side-by-side {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 500px) {
+          .product-card-horizontal {
+            flex-direction: column !important;
+          }
+          .product-card-thumb {
+            width: 100% !important;
+            height: 160px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

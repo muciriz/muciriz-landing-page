@@ -13,8 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLegal }) => {
     { name: 'Our Brands', href: '#brands' },
     { name: 'Quality Standard', href: '#standards' },
     { name: "Today's Catch", href: '#products' },
-    { name: 'Mobile App', href: '#app-download' },
-    { name: 'Helpline & Hubs', href: '#contact' },
+    { name: 'Headquarters & Hubs', href: '#contact' },
   ];
 
   return (
@@ -126,10 +125,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLegal }) => {
             ))}
           </nav>
 
-          {/* Right Action: Sleek Compact App Button */}
+          {/* Right Action: Helpline Button */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <a
-              href="#app-download"
+              href="tel:9447728387"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -153,8 +152,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLegal }) => {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <Smartphone size={15} color="var(--gold-light)" />
-              <span>Get App</span>
+              <Phone size={14} color="var(--gold-light)" />
+              <span>Helpline: 94477 28387</span>
             </a>
 
             {/* Mobile Hamburger Button */}

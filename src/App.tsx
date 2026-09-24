@@ -3,8 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StandardsSection } from './components/StandardsSection';
 import { ProductCatalog } from './components/ProductCatalog';
-import { AppDownloadBanner } from './components/AppDownloadBanner';
-import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { LegalPage } from './components/LegalPage';
 import { LegalDocType } from './data/legalDocuments';
@@ -124,12 +122,6 @@ export function App() {
 
         {/* 4. Brief Showcase of Today's Provisions available on the App */}
         <ProductCatalog onOpenLegal={navigateToLegal} />
-
-        {/* 5. Mobile App Features Banner with Realistic Android Phone Mockup */}
-        <AppDownloadBanner />
-
-        {/* 6. Direct Helpline, WhatsApp & Hubs (Zero Complicated Query Forms) */}
-        <ContactSection onOpenLegal={navigateToLegal} />
       </main>
 
       {/* 7. Heritage Footer with Prominent Helpline Banner & Full Legal Policies */}

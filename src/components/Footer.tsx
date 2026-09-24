@@ -7,10 +7,147 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
+  const coverageAreas = [
+    'Aluva Hub',
+    'Kochi Hub',
+    'Kottayam Central',
+    'Athirampuzha Junction',
+    'Angamaly',
+    'All Areas within 15 km of Each Hub',
+  ];
+
   return (
-    <footer style={{ backgroundColor: 'var(--pine-900)', color: '#9AAFA9', paddingTop: '4rem', paddingBottom: '2.5rem' }}>
+    <footer id="contact" style={{ backgroundColor: 'var(--pine-900)', color: '#9AAFA9', paddingTop: '4rem', paddingBottom: '2.5rem' }}>
       <div className="container">
-        {/* Top Highlighted Helpline & Support Banner */}
+        {/* 1. Headquarters & Distribution Hubs Section inside Last Section (Black Box) */}
+        <div
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.04)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '16px',
+            padding: '2rem 2.25rem',
+            marginBottom: '3rem',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '0.85rem',
+              marginBottom: '1.25rem',
+            }}
+          >
+            <div>
+              <span
+                style={{
+                  fontSize: '0.7rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  color: 'var(--gold-light)',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                }}
+              >
+                PHYSICAL FACILITIES & REGISTRATION
+              </span>
+              <h3
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '1.4rem',
+                  fontWeight: 700,
+                  color: '#ffffff',
+                  marginTop: '0.2rem',
+                }}
+              >
+                Headquarters & Distribution Hubs
+              </h3>
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.8rem',
+                color: '#CBD5D1',
+                backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                padding: '0.4rem 0.85rem',
+                borderRadius: '8px',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+              }}
+            >
+              <span
+                style={{
+                  width: '7px',
+                  height: '7px',
+                  borderRadius: '50%',
+                  backgroundColor: '#10B981',
+                  display: 'inline-block',
+                  boxShadow: '0 0 8px #10B981',
+                }}
+              />
+              <span>Active Dispatch: 06:00 AM – 08:00 PM Daily (Morning 07:00–11:00 AM & Evening 04:00–08:00 PM)</span>
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '2rem',
+              paddingTop: '1.25rem',
+              borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            }}
+          >
+            {/* Column 1: Registered Head Office & Grievance */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.86rem', color: '#CBD5D1' }}>
+              <div>
+                <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.9rem', marginBottom: '0.2rem' }}>
+                  Registered Head Office:
+                </strong>
+                <span style={{ lineHeight: 1.5 }}>
+                  Muciriz Traders, 8/614 - Viswamatha Building, Church Junction, Athirampuzha, Kerala - 686562
+                </span>
+              </div>
+
+              <div>
+                <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.9rem', marginBottom: '0.2rem' }}>
+                  Grievance Officer:
+                </strong>
+                <span>Mr. Joben Jose, Grievance Officer, Muciriz Traders</span>
+              </div>
+            </div>
+
+            {/* Column 2: Active Day Chilled Coverage Hubs */}
+            <div>
+              <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.9rem', marginBottom: '0.65rem' }}>
+                Active Day Chilled Coverage Hubs:
+              </strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
+                {coverageAreas.map((area, idx) => (
+                  <span
+                    key={idx}
+                    style={{
+                      fontSize: '0.76rem',
+                      padding: '0.35rem 0.75rem',
+                      borderRadius: '999px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.07)',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      color: '#E2ECE9',
+                      fontWeight: 500,
+                    }}
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 2. Top Highlighted Helpline & Support Banner */}
         <div
           style={{
             backgroundColor: 'rgba(255, 255, 255, 0.05)',
@@ -105,7 +242,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           </div>
         </div>
 
-        {/* Main Footer Grid */}
+        {/* 3. Main Footer Grid */}
         <div
           style={{
             display: 'grid',
@@ -150,33 +287,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               Honest cold-handled seafood, stone-ground heirloom spice mixes, and curated farm-fresh 
               vegetable bunches. 100% chemical-free with full net-weight transparency. Powered by cold-chain logistics across Kerala.
             </p>
-
-            <div style={{ marginBottom: '1.5rem' }}>
-              <a href="#app-download" className="btn-playstore" style={{ padding: '0.45rem 0.95rem' }}>
-                <svg width="18" height="20" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M3.609 1.814L13.793 12 3.61 22.186A1.85 1.85 0 0 1 3 20.875V3.125c0-.498.225-.97.609-1.311z"
-                    fill="#00D6FF"
-                  />
-                  <path
-                    d="M17.18 8.613L4.938 1.488A1.83 1.83 0 0 0 3.61 1.814L13.793 12l3.387-3.387z"
-                    fill="#00F076"
-                  />
-                  <path
-                    d="M3.61 22.186c.384.342.884.444 1.328.186l12.242-7.125L13.793 12 3.61 22.186z"
-                    fill="#FF3A44"
-                  />
-                  <path
-                    d="M20.59 10.603l-3.41 1.984-3.387-3.387 3.387-3.387 3.41 1.984c.983.57 1.41 1.403 1.41 2.403 0 1-.427 1.833-1.41 2.403z"
-                    fill="#FFAA00"
-                  />
-                </svg>
-                <div>
-                  <span className="playstore-sub">GET IT ON</span>
-                  <span className="playstore-main">Google Play</span>
-                </div>
-              </a>
-            </div>
 
             <div style={{ fontSize: '0.8rem', color: '#889C96', lineHeight: 1.6 }}>
               <div>Head Office: Viswamatha Building, Athirampuzha, Kerala - 686562</div>
@@ -264,26 +374,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               </li>
               <li>
                 <button
-                  onClick={() => onOpenLegal('staff-privacy')}
-                  style={{ background: 'none', border: 'none', color: '#A5B9B3', cursor: 'pointer', textAlign: 'left', fontSize: '0.86rem', padding: 0 }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#A5B9B3')}
-                >
-                  Staff Privacy Policy
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onOpenLegal('staff-terms')}
-                  style={{ background: 'none', border: 'none', color: '#A5B9B3', cursor: 'pointer', textAlign: 'left', fontSize: '0.86rem', padding: 0 }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#A5B9B3')}
-                >
-                  Staff Terms & Conditions
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => onOpenLegal('account-deletion')}
                   style={{
                     background: 'none',
@@ -319,6 +409,26 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               </li>
               <li>
                 <button
+                  onClick={() => onOpenLegal('staff-privacy')}
+                  style={{ background: 'none', border: 'none', color: '#A5B9B3', cursor: 'pointer', textAlign: 'left', fontSize: '0.86rem', padding: 0 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#A5B9B3')}
+                >
+                  Staff Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onOpenLegal('staff-terms')}
+                  style={{ background: 'none', border: 'none', color: '#A5B9B3', cursor: 'pointer', textAlign: 'left', fontSize: '0.86rem', padding: 0 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#A5B9B3')}
+                >
+                  Staff Terms & Conditions
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onOpenLegal('customer-privacy')}
                   style={{ background: 'none', border: 'none', color: 'var(--gold-light)', cursor: 'pointer', textAlign: 'left', fontSize: '0.86rem', padding: 0, fontWeight: 600 }}
                 >
@@ -329,7 +439,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           </div>
         </div>
 
-        {/* Subfooter */}
+        {/* 4. Subfooter */}
         <div
           style={{
             paddingTop: '2rem',
